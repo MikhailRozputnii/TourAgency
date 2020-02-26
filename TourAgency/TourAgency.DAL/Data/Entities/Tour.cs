@@ -12,7 +12,7 @@ namespace TourAgency.DAL.Data.Entities
 
         public int? LocationId { get; set; }
         public Location Location { get; set; }
-        public ICollection<string> Images { get; set; }
+        public IEnumerable<Image> Images { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
