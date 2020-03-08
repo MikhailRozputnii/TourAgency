@@ -6,6 +6,7 @@ namespace TourAgency.DAL.Data.Entities
     {
         public decimal TotalPrice { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
         public int? CustomerId { get; set; }
         public User Customer { get; set; }
@@ -14,6 +15,7 @@ namespace TourAgency.DAL.Data.Entities
         public Tour Tour { get; set; }
 
         public int? OrderStatusId { get; set; }
+
         public OrderStatus OrderStatus { get; set; }
         public bool IsDeleted { get; set; }
     }

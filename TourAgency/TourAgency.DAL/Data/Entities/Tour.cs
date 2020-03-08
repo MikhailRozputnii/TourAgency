@@ -10,9 +10,8 @@ namespace TourAgency.DAL.Data.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public int? LocationId { get; set; }
-        public Location Location { get; set; }
-        public ICollection<string> Images { get; set; }
+        public ICollection<TourLocation> TourLocations { get; set; }
+        public ICollection<Image> Images { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
