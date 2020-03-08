@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using TourAgency.DAL.Data;
 using TourAgency.DAL.Data.Entities;
 using TourAgency.DAL.Data.Repositories;
-using TourAgency.DAL.Data.Repositories.Implement;
+using TourAgency.DAL.Data.Repositories.Implementation;
 
 namespace TourAgency.Api
 {
