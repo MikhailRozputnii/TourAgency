@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace TourAgency.DAL.Data.Entities
 {
@@ -10,10 +8,9 @@ namespace TourAgency.DAL.Data.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-
         public DateTime DateOfBirth { get; set; }
         public bool IsDeleted { get; set; }
 
-        public IEnumerable<Image> Images { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

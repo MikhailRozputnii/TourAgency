@@ -1,4 +1,6 @@
-﻿namespace TourAgency.DAL.Data.Entities
+﻿using System.Collections.Generic;
+
+namespace TourAgency.DAL.Data.Entities
 {
     public class Location : BaseEntity
     {
@@ -7,5 +9,6 @@
         public string Address { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public ICollection<TourLocation> TourLocations { get; set; }
     }
 }
