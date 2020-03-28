@@ -7,11 +7,21 @@ namespace TourAgency.DAL.Data.Repositories
     public interface IRepository<TEntity> where TEntity : class
     {
         /// <summary>
-        ///  Get collection of entities by expression
+        ///  Get collection of entities by expression with pagination
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="sortProperty"></param>
+        /// <returns>Entity Collection</returns>
+        IEnumerable<TEntity> GetByExpression(Expression<Func<TEntity, bool>> predicate, int pageNumber, int pageSize, string sortProperty = "Id", bool isAsc = true);
+
+        /// <summary>
+        /// Get collection of entities by expression
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>Entity Collection</returns>
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> GetByExpression(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
         /// Get entity by id
@@ -31,7 +41,7 @@ namespace TourAgency.DAL.Data.Repositories
         /// </summary>
         /// <param name="entity">Entity type</param>
         /// <returns>Entity</returns>
-        TEntity Add(TEntity entity);
+        void Add(TEntity entity);
 
         /// <summary>
         ///  Update current entity
@@ -44,14 +54,7 @@ namespace TourAgency.DAL.Data.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Exists boolean indication</returns>
-        bool IsExistAsync(int id);
-
-        /// <summary>
-        ///  Get count of elements in an entity collection by expression
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns>Count of collection</returns>
-        int Count(Expression<Func<TEntity, bool>> predicate);
+        bool IsExist(int id);
 
         /// <summary>
         ///  Delete entity
@@ -60,5 +63,12 @@ namespace TourAgency.DAL.Data.Repositories
         /// <param name="entity"></param>
         /// <returns></returns>
         void Delete(TEntity entity);
+
+        /// <summary>
+        ///  Get count of elements in an entity collection by expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns>Count of collection</returns>
+        int Count(Expression<Func<TEntity, bool>> predicate);
     }
 }
