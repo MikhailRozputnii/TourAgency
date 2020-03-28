@@ -6,19 +6,16 @@ namespace TourAgency.DAL.Data.Repositories.Implementation
 {
     public class OrderRepository : BaseRepository<Order>
     {
-        private AppDbContext _dbContext;
-
         public OrderRepository(AppDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
         }
 
-        public override Order Add(Order entity)
+        public override void Add(Order entity)
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
             entity.CreatedAt = DateTime.UtcNow;
-            return _dbContext.Set<Order>().Add(entity).Entity;
+            _dbContext.Set<Order>().Add(entity);
         }
 
         public override void Delete(Order entity)
