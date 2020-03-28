@@ -8,7 +8,7 @@ namespace TourAgency.DAL.Extensions
     public static class IQueryableExtensions
     {
         /// <summary>
-        /// Builds the queryable function for pagination
+        /// Builds the Queryable  for pagination
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
