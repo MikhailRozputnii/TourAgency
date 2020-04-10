@@ -10,7 +10,7 @@ _site/
 # See #577
 # Use git add -f to force override .sln when required. Not needed in most cases.
 # git add -f myProj.sln
-*.sln
+
 
 Project_Readme.html
 
@@ -21,7 +21,6 @@ Project_Readme.html
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
 .vscode/
 !.vscode/extensions.json
 !.vscode/settings.json
